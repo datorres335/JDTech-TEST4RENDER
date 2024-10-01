@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'products', to: 'products#index'
   get 'cart', to: 'cart#show'
   get 'login', to: 'sessions#new'
+  get 'search', to: 'search#search'
 end
