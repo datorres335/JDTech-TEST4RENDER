@@ -6,21 +6,26 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   
+  <!-- Link to CSS -->
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- Link to JavaScript -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
+  <!-- Header with Navigation -->
   <header>
-    <%= render 'layouts/nav' %> <!-- Include your navigation here -->
+    <%= render 'layouts/nav' %>
   </header>
   
+  <!-- Main content -->
   <main>
-    <%= yield %> <!-- This is where your view content will be injected -->
+    <%= yield %>
   </main>
   
+  <!-- Footer -->
   <footer>
-    <p>© 2024 DJTech</p>
+    <p class="footer-title">© 2024 DJTech</p>
   </footer>
 </body>
 </html>
