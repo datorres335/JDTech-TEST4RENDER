@@ -1,13 +1,23 @@
-<div class="home-page text-center">
-<h1>Welcome to DJTech!</h1>
-<p>Find the best products here.</p>
+<div class="home-page" data-controller="slideshow">
+  <h1 class="site-title">Welcome to DJTech!</h1>
+  <p class="sub-title">Find the best products here.</p>
 
-<!-- Slideshow container -->
-<div class="relative mx-auto overflow-hidden" style="width: 100%; max-width: 100vw;">
-  <!-- Image adjusted to fit within the viewport width and prevent overflow -->
-  <img src="https://via.placeholder.com/2100x900.png?text=Slide+1"
-       class="w-full h-auto"
-       style="max-width: 100%; height: auto; display: block;">
-</div>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+    <div class="slides-wrapper">
 
+      <div class="mySlides" data-slideshow-target="slide">
+        <img src="https://via.placeholder.com/2100x900.png?text=Slide+1" style="width: 100%; height: auto;">
+      </div>
+
+      <div class="mySlides" data-slideshow-target="slide">
+        <img src="https://via.placeholder.com/2100x900.png?text=Slide+2" style="width: 100%; height: auto;">
+      </div>
+
+      <div class="mySlides" data-slideshow-target="slide">
+        <img src="https://via.placeholder.com/2100x900.png?text=Slide+3" style="width: 100%; height: auto;">
+      </div>
+
+    </div>
+  </div>
 </div>
