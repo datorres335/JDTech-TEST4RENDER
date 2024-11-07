@@ -40,3 +40,23 @@
     min-width: 100%; /* Make each slide occupy full container width */
     box-sizing: border-box; /* Prevent padding issues */
   }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .product-item img {
+    width: 100%;
+    height: auto;
+  }
+  

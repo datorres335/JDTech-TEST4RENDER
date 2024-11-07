@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "products/index"
   root "home#home" # The home controller and home action for the root URL
 
   # Example resource routes (controllers and actions should exist)
