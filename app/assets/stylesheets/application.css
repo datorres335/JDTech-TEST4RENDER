@@ -20,10 +20,30 @@
 @import "tailwindcss/utilities";
 
 
- .site-title, .sub-title, .footer-title {
-    padding-left: 1rem; /* You can adjust the value as needed */
+ .site-title, .footer-title {
+    padding-left: 1rem;
+    text-align: center;
+  }
+
+  .sub-title {
+    padding-left: 1rem;
+    padding-top: .05rem;
+    margin-top: .05rem;
   }
   
+  .aside-bar {
+    float: left;
+    margin: 1rem 2rem 1rem 1rem;
+  }
+
+  .aside-bar section {
+    margin: 1rem 0;
+  }
+
+  section.first {
+    margin: 0 0 1rem 0;
+    border: 0 0 1rem 0;
+  }
 
   .slideshow-container {
     max-width: 100%;
@@ -60,3 +80,9 @@
     height: auto;
   }
   
+  @font-face {
+    font-family: 'Rocket Rinder';
+    src: url('/assets/RocketRinder.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }

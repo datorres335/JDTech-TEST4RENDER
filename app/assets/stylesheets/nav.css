@@ -1,3 +1,8 @@
+ @import 'nav';
+ @import "tailwindcss/base";
+ @import "tailwindcss/components";
+ @import "tailwindcss/utilities";
+
 body {
     margin: 0;
     padding: 0;
@@ -30,3 +35,14 @@ body {
  .navbar li a:hover {
      background-color: #111;
  }
+
+ul.navbar .brand {
+    display: block;
+    color: rgb(171, 171, 171);
+    text-align: center;
+    padding: .15em;
+    margin-left: 0.2em;
+    border: 0;
+    font-family: 'Rocket Rinder', sans-serif;
+    font-size: 2em;
+}
