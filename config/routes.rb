@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "products/index"
   root "home#home" # The home controller and home action for the root URL
 
