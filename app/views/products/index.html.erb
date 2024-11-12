@@ -7,3 +7,15 @@
     </div>
   <% end %>
 </div>
+
+  <%# DISPLAYING THE SEARCH RESULTS, CODE NOT WORKING AS OF NOW %>
+  <%# if @products.any? %>
+    <%# @products.each do |product| %>
+      <div class="product-item">
+        <h2><%#= link_to product.name, product_path(product) %></h2>
+        <p><%#= truncate(product.description, length: 100) %></p>
+      </div>
+    <%# end %>
+  <%# else %>
+    <%# <p>No products found</p> %>
+  <%# end %>

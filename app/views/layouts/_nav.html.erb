@@ -1,9 +1,14 @@
 <nav>
   <ul class = "navbar">
     <li class="brand">DJ Tech</li>
-    <li><%= link_to 'Home', root_path %></li>
-    <li><%= link_to 'Products', products_path %></li>
-    <li><%= link_to 'Search', search_path %></li>
+    <li class="left_side first"><%= link_to 'Home', root_path %></li>
+    <li class="left_side"><%= link_to 'Products', products_path %></li>
+    <li>
+      <%= form_with(url: products_path, method: :get, local: true, class: "navbar-search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search products...", class: "navbar-search-field" %>
+        <%= submit_tag "Search", class: "navbar-search-button" %>
+      <% end %>
+    </li>
     <li class="right_side"><%= link_to 'Cart', cart_path %></li>
     <li class="right_side">
       <% if user_signed_in? %>
