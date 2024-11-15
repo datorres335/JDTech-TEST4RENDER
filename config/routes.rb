@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'cart', to: 'cart#show'
   get 'login', to: 'sessions#new'
   get 'search', to: 'search#search'
+  resources :products, only: [:index, :show, :new, :create]
 end

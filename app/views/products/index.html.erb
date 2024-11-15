@@ -1,9 +1,17 @@
-<div class="product-grid">
-  <% 12.times do |i| %>
-    <div class="product-item">
-      <img src="https://via.placeholder.com/150" alt="Product <%= i + 1 %>">
-      <h3>Product <%= i + 1 %></h3>
-      <p>$99.99</p>
-    </div>
-  <% end %>
+<div class="all-products-page">
+  <h1 class="product_title">Products</h1>
+  <div class="list-product-link">
+    <%= link_to 'List a Product', new_product_path, class: 'btn btn-success' %>
+  </div>
+  <div class="product-grid">
+    <% @products.each do |product| %>
+      <%= link_to product_path(product), class: 'product-link' do %>
+        <div class="product-item">
+          <img src="<%= product.image.present? ? url_for(product.image) : asset_path('product-placeholder.png') %>" alt="<%= product.name %>" class="product-image">
+          <h3><%= product.name %></h3>
+          <p>$<%= product.price %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
