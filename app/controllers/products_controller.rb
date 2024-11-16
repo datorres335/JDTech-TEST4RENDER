@@ -2,6 +2,13 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :add_to_cart]
 
   def index
+    # # TO DISPLAY PRODUCTS FROM SEARCH BAR  # CODE NOT WORKING AS OF NOW
+    # if params[:search].present?
+    #   @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
+    # else
+    #   @products = Product.all
+    # end
+    
     @products = Product.all
   end
 
