@@ -76,8 +76,11 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
     base64 (0.2.0)
-    bcrypt (3.1.20)
+<<<<<<< HEAD
     benchmark (0.3.0)
+=======
+    bcrypt (3.1.20)
+>>>>>>> side-navbar
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
@@ -152,6 +155,8 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.16.7-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.26.3)
     parser (3.3.5.0)
@@ -206,10 +211,14 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.10)
       io-console (~> 0.5)
+<<<<<<< HEAD
+    rexml (3.3.9)
+=======
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.9)
+    rexml (3.3.7)
+>>>>>>> side-navbar
     rubocop (1.66.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -255,6 +264,7 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     sqlite3 (2.2.0-x64-mingw-ucrt)
+    sqlite3 (2.2.0-x86_64-linux-gnu)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.2)
@@ -262,6 +272,7 @@ GEM
       railties (>= 7.0.0)
       tailwindcss-ruby
     tailwindcss-ruby (3.4.14-x64-mingw-ucrt)
+    tailwindcss-ruby (3.4.14-x86_64-linux)
     thor (1.3.2)
     timeout (0.4.1)
     turbo-rails (2.0.11)
@@ -290,6 +301,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
