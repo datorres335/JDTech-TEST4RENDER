@@ -1,0 +1,55 @@
+.aside-bar {
+    float: left;
+    width: 14rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aside-title {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+.aside-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-item {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+
+.aside-item:last-child {
+    border-bottom: none;
+}
+
+.aside-item:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.aside-item:active {
+    background-color: #ccc;
+}
+
+/* Adjust for Smaller Screens */
+@media (max-width: 768px) {
+    .aside-bar {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
