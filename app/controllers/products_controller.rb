@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :add_to_cart]
+  before_action :set_product, only: [ :show, :add_to_cart ]
 
   def index
     # # TO DISPLAY PRODUCTS FROM SEARCH BAR  # CODE NOT WORKING AS OF NOW
@@ -8,8 +8,23 @@ class ProductsController < ApplicationController
     # else
     #   @products = Product.all
     # end
-    
+
     @products = Product.all
+  end
+
+  def new
+    @product = Product.new
+  end
+
+  # TEST CODE FOR THE CREATE ACTION!!!!!!!!!!!!!!!
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to @product, notice: "Product was successfully created."
+    else
+      Rails.logger.debug @product.errors.full_messages # Log validation errors
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -20,7 +35,7 @@ class ProductsController < ApplicationController
     # For example, storing the product ID in a session:
     session[:cart] ||= []
     session[:cart] << @product.id
-    redirect_to product_path(@product), notice: 'Product added to cart!'
+    redirect_to product_path(@product), notice: "Product added to cart!"
   end
 
   private
@@ -30,6 +45,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :image, :description, features: [])
+    params.require(:product).permit(:name, :price, :image, features: [])
   end
 end

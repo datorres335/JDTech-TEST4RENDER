@@ -1,3 +1,3 @@
 class Product < ApplicationRecord
-  end
-  
+  has_one_attached :image
+end
