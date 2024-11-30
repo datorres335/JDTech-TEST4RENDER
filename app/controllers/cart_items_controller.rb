@@ -58,7 +58,7 @@ class CartItemsController < ApplicationController
     @cart_item.destroy!
 
     respond_to do |format|
-      format.html { redirect_to cart_items_path, status: :see_other, notice: "Cart item was successfully destroyed." }
+      format.html { redirect_to my_cart_path, status: :see_other, notice: "Cart item was successfully destroyed." }
       format.json { head :no_content }
     end
   end

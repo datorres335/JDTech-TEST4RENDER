@@ -13,7 +13,9 @@
                         <div class="cart-details">
                             <h3 class="product-name"><%= product.name %></h3>
                             <p class="product-price">$<%= product.price %></p>
-                            <button class="remove-button">Remove</button>
+                            <%= form_with model: cart_item, method: :delete, local: true do %>
+                                <%= submit_tag "Remove", class: "remove-button" %>
+                            <% end %>
                         </div>
                     </li>
                 <% end %>
