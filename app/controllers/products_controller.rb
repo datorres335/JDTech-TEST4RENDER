@@ -28,9 +28,10 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @cart_item = CartItem.new
   end
 
-  def add_to_cart
+  def add_to_cart # NOT YET IMPLEMENTED ANYWHERE
     # Implement your logic for adding the product to the cart here
     # For example, storing the product ID in a session:
     session[:cart] ||= []

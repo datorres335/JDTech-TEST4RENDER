@@ -1,0 +1,23 @@
+<%= form_with(model: cart_item, class: "contents") do |form| %>
+  <% if cart_item.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(cart_item.errors.count, "error") %> prohibited this cart_item from being saved:</h2>
+
+      <ul>
+        <% cart_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if current_user %>
+    <%= form.number_field :user_id, value: current_user.id, type:"hidden"%>
+  <% end %>
+  <div>
+    <%= form.text_field :product_id, value: @product.id, type:"hidden"%>
+  </div>
+  <div>
+    <%= form.submit "Add to Cart", class: "btn btn-primary" %>
+  </div>
+<% end %>
