@@ -27,7 +27,18 @@
       <div class="product-buttons">
         <%= render partial: "cart_items/form", locals: {cart_item: @cart_item} %>
         <%= button_to 'Buy Now', '#', class: 'btn btn-primary' %>
+            <!-- Edit/ Delete Product Button -->
+        <%# if current_user && current_user.id == @subreddit.user_id %>
+              <div><%#= link_to "Edit product", edit_product_path(@product) %></div>
+              <div><%= button_to "Delete product", @product, method: :delete, class: 'btn btn-primary', style:"background-color: #ff1919;" %><div>
+        <%# end %>
+
+
+
       </div>
     </div>
+
+
+
   </div>
 </div>

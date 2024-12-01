@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [ :show, :add_to_cart ]
+  before_action :set_product, only: %i[new create show destroy add_to_cart]
 
   def index
     # # TO DISPLAY PRODUCTS FROM SEARCH BAR  # CODE NOT WORKING AS OF NOW
@@ -37,6 +37,17 @@ class ProductsController < ApplicationController
     session[:cart] ||= []
     session[:cart] << @product.id
     redirect_to product_path(@product), notice: "Product added to cart!"
+  end
+
+  def destroy
+    # if current_user && current_user.id == @product.user_id
+      @product.destroy!
+
+      respond_to do |format|
+        format.html { redirect_to products_path, status: :see_other, notice: "Product was successfully deleted." }
+        format.json { head :no_content }
+        end
+    # end
   end
 
   private
