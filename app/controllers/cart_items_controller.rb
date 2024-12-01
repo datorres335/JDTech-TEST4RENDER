@@ -1,5 +1,6 @@
 class CartItemsController < ApplicationController
   before_action :set_cart_item, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[new edit create update destroy my_cart]
 
   def my_cart
     if current_user
