@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[new create show destroy add_to_cart]
+  before_action :set_product, only: %i[show destroy add_to_cart]
+  before_action :authenticate_user!, only: %i[new create destroy]
 
   def index
     # # TO DISPLAY PRODUCTS FROM SEARCH BAR  # CODE NOT WORKING AS OF NOW
@@ -57,6 +58,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :image, features: [])
+    params.require(:product).permit(:name, :price, :image, :user_id, features: [])
   end
 end
