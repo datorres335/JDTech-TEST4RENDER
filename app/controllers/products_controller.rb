@@ -17,9 +17,16 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  # TEST CODE FOR THE CREATE ACTION!!!!!!!!!!!!!!!
   def create
-    @product = Product.new(product_params)
+    # Preprocess features if it's a string (from a text field input).
+    if product_params[:features].is_a?(String)
+      processed_features = product_params[:features].split(',').map(&:strip)
+    else
+      processed_features = product_params[:features]
+    end
+
+    @product = Product.new(product_params.merge(features: processed_features))
+
     if @product.save
       redirect_to @product, notice: "Product was successfully created."
     else
@@ -27,6 +34,8 @@ class ProductsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+
 
   def show
     @cart_item = CartItem.new
@@ -58,6 +67,11 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :image, :user_id, features: [])
+    params.require(:product).permit(:name, :price, :image, :user_id, :features).tap do |whitelisted|
+      if params[:product][:features].is_a?(String)
+        whitelisted[:features] = params[:product][:features].split(',').map(&:strip)
+      end
+    end
   end
+
 end
