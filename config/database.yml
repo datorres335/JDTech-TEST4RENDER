@@ -3,24 +3,33 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  database: <%= ENV['DB_DATABASE'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 
 development:
   <<: *default
+  host: localhost         # Local database for development
+  port: 5432              # Local PostgreSQL port
   database: jd_tech_development
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: localhost
-  port: 5432
+  username: postgres
+  password: postgres      # Local development DB password
 
 test:
   <<: *default
-  database: jd_tech_test
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
   host: localhost
   port: 5432
-
+  database: jd_tech_test
+  username: postgres
+  password: postgres      # Local test DB password
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  host: <%= ENV['DB_HOST'] %>         # Remote database hostname
+  port: <%= ENV['DB_PORT'] %>         # Remote PostgreSQL port
+  database: <%= ENV['DB_DATABASE'] %> # Remote database name
+  username: <%= ENV['DB_USERNAME'] %> # Remote database user
+  password: <%= ENV['DB_PASSWORD'] %> # Remote database password
+  url: <%= ENV['DATABASE_URL'] %>     # Optional: Full URL if provided
