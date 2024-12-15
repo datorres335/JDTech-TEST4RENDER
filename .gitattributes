@@ -7,3 +7,14 @@ db/schema.rb linguist-generated
 vendor/* linguist-vendored
 config/credentials/*.yml.enc diff=rails_credentials
 config/credentials.yml.enc diff=rails_credentials
+
+# Ensure consistent line endings
+* text=auto
+*.rb text eol=lf
+*.yml text eol=lf
+*.erb text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.lock text eol=lf
+
