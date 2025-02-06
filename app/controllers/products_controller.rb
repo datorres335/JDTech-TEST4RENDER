@@ -3,14 +3,11 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create destroy]
 
   def index
-    # # TO DISPLAY PRODUCTS FROM SEARCH BAR  # CODE NOT WORKING AS OF NOW
-    # if params[:search].present?
-    #   @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
-    # else
-    #   @products = Product.all
-    # end
-
-    @products = Product.all
+    if params[:search].present?
+      @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      @products = Product.all
+    end
   end
 
   def new
@@ -19,11 +16,7 @@ class ProductsController < ApplicationController
 
   def create
     # Preprocess features if it's a string (from a text field input).
-    if product_params[:features].is_a?(String)
-      processed_features = product_params[:features].split(',').map(&:strip)
-    else
-      processed_features = product_params[:features]
-    end
+    processed_features = product_params[:features].is_a?(String) ? product_params[:features].split(',').map(&:strip) : product_params[:features]
 
     @product = Product.new(product_params.merge(features: processed_features))
 
@@ -35,29 +28,29 @@ class ProductsController < ApplicationController
     end
   end
 
-
-
   def show
     @cart_item = CartItem.new
   end
 
   def add_to_cart # NOT YET IMPLEMENTED ANYWHERE
-    # Implement your logic for adding the product to the cart here
-    # For example, storing the product ID in a session:
     session[:cart] ||= []
     session[:cart] << @product.id
     redirect_to product_path(@product), notice: "Product added to cart!"
   end
 
   def destroy
-    # if current_user && current_user.id == @product.user_id
-      @product.destroy!
-
+    if current_user.admin? || current_user.id == @product.user_id
+      @product.destroy
       respond_to do |format|
         format.html { redirect_to products_path, status: :see_other, notice: "Product was successfully deleted." }
         format.json { head :no_content }
-        end
-    # end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to products_path, alert: "You are not authorized to delete this product." }
+        format.json { head :forbidden }
+      end
+    end
   end
 
   private
@@ -68,10 +61,7 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :price, :image, :user_id, :features).tap do |whitelisted|
-      if params[:product][:features].is_a?(String)
-        whitelisted[:features] = params[:product][:features].split(',').map(&:strip)
-      end
+      whitelisted[:features] = params[:product][:features].split(',').map(&:strip) if params[:product][:features].is_a?(String)
     end
   end
-
 end

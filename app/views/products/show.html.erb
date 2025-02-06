@@ -29,7 +29,7 @@
         <%= button_to 'Buy Now', '#', class: 'btn btn-primary' %>
 
         <!-- Edit/ Delete Product Button -->
-        <% if current_user && current_user.id == @product.user_id %>
+        <% if current_user && (current_user.id == @product.user_id || current_user.admin?) %>
           <div><%#= link_to "Edit product", edit_product_path(@product) %></div>
           <div><%= button_to "Delete product", @product, method: :delete, class: 'btn btn-primary', style:"background-color: #ff1919;" %><div>
         <% end %>
