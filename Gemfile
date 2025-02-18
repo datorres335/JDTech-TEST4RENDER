@@ -35,7 +35,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
 # XML parsing
-gem "rexml", "3.3.9"
+gem "rexml", "3.4.1"
 
 # Development and Testing tools
 group :development, :test do
