@@ -9,64 +9,72 @@
  *= require_self
  */
 
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
+ /*
+ @layer components {
+   .btn-primary {
+     @apply py-2 px-4 bg-blue-200;
+   }
+ }
+ */
+ 
  @import 'nav';
- @import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-
+ 
  .site-title, .footer-title {
-    padding-left: 1rem;
-    text-align: center;
-  }
-
-  .sub-title {
-    padding-left: 1rem;
-    padding-top: .05rem;
-    margin-top: .05rem;
-  }
-
-  .slideshow-container {
-    max-width: 100%;
-    overflow: hidden; /* Hide overflow to create sliding effect */
-    position: relative;
-    flex: 3;
-    background-color: #dcdcdc;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .slides-wrapper {
-    display: flex; /* Arrange horizontally */
-    transition: transform 1s ease-in-out; /* Smooth slide transition */
-  }
-
-  .mySlides {
-    min-width: 100%; /* Make each slide occupy full container width */
-    box-sizing: border-box; /* Prevent padding issues */
-  }
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 16px;
-    padding: 20px;
-  }
-  
-  .product-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    background-color: #f9f9f9;
-  }
-  
-  .product-item img {
-    width: 100%;
-    height: auto;
-  }
-  
-  @font-face {
-    font-family: 'Rocket Rinder';
-    src: url('/assets/RocketRinder.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-  }
+   padding-left: 1rem;
+   text-align: center;
+ }
+ 
+ .sub-title {
+   padding-left: 1rem;
+   padding-top: .05rem;
+   margin-top: .05rem;
+ }
+ 
+ .slideshow-container {
+   max-width: 100%;
+   overflow: hidden; /* Hide overflow to create sliding effect */
+   position: relative;
+   flex: 3;
+   background-color: #dcdcdc;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .slides-wrapper {
+   display: flex; /* Arrange horizontally */
+   transition: transform 1s ease-in-out; /* Smooth slide transition */
+ }
+ 
+ .mySlides {
+   min-width: 100%; /* Make each slide occupy full container width */
+   box-sizing: border-box; /* Prevent padding issues */
+ }
+ 
+ .product-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+   gap: 16px;
+   padding: 20px;
+ }
+ 
+ .product-item {
+   border: 1px solid #ccc;
+   padding: 10px;
+   text-align: center;
+   background-color: #f9f9f9;
+ }
+ 
+ .product-item img {
+   width: 100%;
+   height: auto;
+ }
+ 
+ @font-face {
+   font-family: 'Rocket Rinder';
+   src: url('/assets/RocketRinder.otf') format('opentype');
+   font-weight: bold;
+   font-style: normal;
+ }
