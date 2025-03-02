@@ -20,7 +20,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon_public
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
@@ -48,4 +48,9 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # TEST CODE!!!!!!!!!!! 03/01/25 6:53PM
+  config.active_storage.service_urls_expire_in = 1.hour
+  config.active_storage.checksum = false
+
 end

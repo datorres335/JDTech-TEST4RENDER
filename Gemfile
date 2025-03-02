@@ -52,3 +52,5 @@ group :test do
   gem "capybara" # System testing
   gem "selenium-webdriver" # Browser automation
 end
+
+gem "aws-sdk-s3", "~> 1.182", require: false
