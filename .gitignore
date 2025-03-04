@@ -34,6 +34,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/vocal-etching-452700-q3-df039a91c07c.json
 
 /app/assets/builds/*
 !/app/assets/builds/.keep

@@ -23,21 +23,21 @@ amazon_public:
   region: <%= ENV["AWS_REGION"] %>
   bucket: <%= ENV["AWS_BUCKET"] %>
 
-  # The "upload" key sets extra options passed to AWS SDK
-  upload:
-    # Make objects publicly readable
-    acl: "public-read"
+  # # The "upload" key sets extra options passed to AWS SDK
+  # upload:
+  #   # Make objects publicly readable
+  #   acl: public-read
 
-  # Tells Active Storage to generate direct, un-signed URLs
-  public: true
+  # # Tells Active Storage to generate direct, un-signed URLs
+  # public: true
 
 
 # Remember not to checkin your GCS keyfile to a repository
-# google:
-#   service: GCS
-#   project: your_project
-#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-#   bucket: your_own_bucket-<%= Rails.env %>
+google:
+  service: GCS
+  project: <%= ENV["GCS_PROJECT_ID"] %>
+  credentials: <%= Rails.root.join("config","vocal-etching-452700-q3-df039a91c07c.json") %>
+  bucket: <%= ENV["GCS_BUCKET"] %>
 
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
