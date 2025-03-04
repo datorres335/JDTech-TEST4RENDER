@@ -19,7 +19,7 @@ gem "jbuilder"
 
 # Tailwind CSS integration
 group :development do
-  gem "tailwindcss-rails", "~> 4.1"
+  gem "tailwindcss-rails", "~> 4.2"
 end
 
 # Asset pipeline support
