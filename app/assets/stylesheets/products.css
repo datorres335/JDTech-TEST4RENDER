@@ -109,6 +109,12 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+    .product-details-page .product-category {
+      text-align: center;
+      list-style-position: inside;
+      margin-top: 10px;
+    }
   
   .product-details-page .product-features {
     text-align: center;

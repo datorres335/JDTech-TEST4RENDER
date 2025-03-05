@@ -60,7 +60,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :image, :user_id, :features).tap do |whitelisted|
+    params.require(:product).permit(:name, :price, :image, :user_id, :features, :category).tap do |whitelisted|
       whitelisted[:features] = params[:product][:features].split(',').map(&:strip) if params[:product][:features].is_a?(String)
     end
   end
