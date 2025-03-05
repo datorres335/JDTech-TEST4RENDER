@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "profiles/show"
 
   devise_for :users
   get "products/index"
@@ -7,6 +8,13 @@ Rails.application.routes.draw do
   # Example resource routes (controllers and actions should exist)
 
   get "cart", to: "cart#show"
+  get "profile", to: "profiles#show"
+  get 'order_history', to: 'profiles#order_history'
+  get 'favorites', to: 'profiles#favorites'
+  get 'account_settings', to: 'profiles#account_settings'
+  get 'start_return', to: 'profiles#start_return'
+  get 'contact_us', to: 'profiles#contact_us'
+  get 'logout', to: 'profiles#logout'
   get "login", to: "sessions#new"
   get "search", to: "search#search"
   resources :cart_items

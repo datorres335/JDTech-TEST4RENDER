@@ -1,0 +1,13 @@
+<div class="profile-container">
+  <h1>Your Account</h1>
+  <p>Welcome, <%= current_user.email %>!</p>
+
+  <div class="profile-options">
+    <%= link_to 'Order History', order_history_path, class: 'profile-option' %>
+    <%= link_to 'Favorites', favorites_path, class: 'profile-option' %>
+    <%= link_to 'Account Settings', account_settings_path, class: 'profile-option' %>
+    <%= link_to 'Start a Return', start_return_path, class: 'profile-option' %>
+    <%= link_to 'Contact Us', contact_us_path, class: 'profile-option' %>
+    <%= link_to 'Log Out', logout_path, class: 'profile-option' %>
+  </div>
+</div>
