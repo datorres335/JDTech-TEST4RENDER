@@ -22,6 +22,21 @@
     <%= form.text_field :features, class: 'form-control' %>
   </div>
 
+    <div class="form-group">
+    <%= form.label :category, "Category" %>
+    <%= form.select :category, options_for_select([
+          ["Processors", "Processors"],
+          ["Motherboards", "Motherboards"],
+          ["Graphics Cards", "Graphics Cards"],
+          ["Computer Memory/ RAM", "Computer Memory/ RAM"],
+          ["Hard Drives & SSDs", "Hard Drives & SSDs"],
+          ["Computer Cases", "Computer Cases"],
+          ["Power Supplies", "Power Supplies"],
+          ["Computer Fans & Cooling", "Computer Fans & Cooling"],
+          ["Other", "Other"]
+        ]), prompt: "Select a Category", class: "form-control" %>
+  </div>
+
   <div>
     <%= form.number_field :user_id, value: current_user.id, type:"hidden" %>
   </div>
