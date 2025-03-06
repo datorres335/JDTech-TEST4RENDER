@@ -1,7 +1,24 @@
 /* General Product Page Styles */
+.header-section {
+  margin-left: 3rem; 
+  text-align: left;
+}
+
 .product_title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
+  }
+
+  .all-products-page {
+    flex-grow: 1; 
+    display: block; 
+    /* padding: 1rem; */
+  }
+
+  .product-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; margin-top: 20px;
   }
   
   /* Styles for All Products Page */
@@ -35,7 +52,7 @@
   }
   
   .all-products-page .list-product-link {
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 2rem;
   }
   
