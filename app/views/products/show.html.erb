@@ -23,7 +23,7 @@
 
     <!-- Product Price and Buttons Section -->
     <div class="product-info">
-      <h3 class="product-price">$<%= @product.price %></h3>
+      <h3 class="product-price"><%= number_to_currency(@product.price, precision: 2, delimiter: ',', separator: '.', format: '%u%n') %></h3>
       <div class="product-buttons">
         <%= render partial: "cart_items/form", locals: {cart_item: @cart_item} %>
         <%= button_to 'Buy Now', '#', class: 'btn btn-primary' %>
