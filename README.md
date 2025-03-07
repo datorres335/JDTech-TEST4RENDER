@@ -1,4 +1,4 @@
-# README
+# JDTECH
 
 Welcome to JDTech!
 
