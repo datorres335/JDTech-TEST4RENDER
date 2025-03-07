@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'profiles#logout'
   get "login", to: "sessions#new"
   get "search", to: "search#search"
+  post 'send_contact', to: 'profiles#send_contact'
   resources :cart_items
   resources :products
   get 'my_cart', to: 'cart_items#my_cart', as: 'my_cart'
