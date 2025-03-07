@@ -73,7 +73,7 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## Contact
 
-For any questions or support, please contact rodriguezjohn910@gmail.com.
+For any questions or support, please contact rodriguezjohn910@gmail.com or datorres335@gmail.com.
 
 For more detailed instructions, please refer to the documentation.
 
