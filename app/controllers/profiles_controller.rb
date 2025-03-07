@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def favorites
+    @favorites = current_user.favorites.includes(:product)
   end
 
   def account_settings

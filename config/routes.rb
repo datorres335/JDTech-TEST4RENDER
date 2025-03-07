@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  get "favorites/create"
+  get "favorites/destroy"
   get "profiles/show"
 
   devise_for :users
   get "products/index"
   root "home#home" # The home controller and home action for the root URL
+
+  # Favorite Items
+  resources :products do
+    resource :favorite, only: [:create, :destroy]
+  end
 
   # Example resource routes (controllers and actions should exist)
 

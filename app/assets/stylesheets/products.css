@@ -133,6 +133,12 @@
     height: 100%;
     text-align: center;
   }
+
+  .product-details-page .price-and-favorite {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   
   .product-details-page .product-price {
     font-size: 1.8rem;
@@ -246,3 +252,26 @@
     color: #6c757d;
     margin-top: 5px;
   }
+
+  .favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+
+  .favorite-button:hover {
+      transform: scale(1.1);
+  }
+
+  .heart-icon {
+      color: #ff4757; /* Red color for filled heart */
+  }
+
+  .favorite-button:not(:hover) .heart-icon {
+      opacity: 0.8;
+  }
+

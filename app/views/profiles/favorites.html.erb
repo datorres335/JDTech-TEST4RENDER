@@ -1,2 +1,30 @@
-<h1>Favorites</h1>
-<p>This is where the favorites page will be implemented.</p>
+<% if @favorites.any? %>
+  <div class="favorites-container">
+    <h2 class="favorites-title">My Favorites</h2>
+    <ul class="favorites-list">
+      <% @favorites.each do |favorite| %>
+        <% product = favorite.product %>
+        <% if product.present? %>
+          <li class="favorite-item">
+            <div class="favorite-image">
+              <img src="<%= product.image.present? ? url_for(product.image) : asset_path('product-placeholder.png') %>" 
+                   alt="<%= product.name %>">
+            </div>
+            <div class="favorite-details">
+              <h3 class="product-name"><%= product.name %></h3>
+              <p class="product-price">$<%= product.price %></p>
+              <%= button_to product_favorite_path(product), method: :delete, class: 'remove-button' do %>
+                Remove from Favorites
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="empty-favorites">
+    <h2>You have no favorite items</h2>
+    <p>Start adding items to your favorites!</p>
+  </div>
+<% end %>
