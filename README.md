@@ -1,4 +1,4 @@
-# JDTECH
+# JDTech
 
 Welcome to JDTech!
 
