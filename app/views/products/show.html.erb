@@ -23,18 +23,28 @@
 
     <!-- Product Price and Buttons Section -->
     <div class="product-info">
-      <h3 class="product-price">$<%= @product.price %></h3>
+      <div class="price-and-favorite">
+        <h3 class="product-price"><%= number_to_currency(@product.price, precision: 2, delimiter: ',', separator: '.', format: '%u%n') %></h3>
+        <!-- Favorite/Unfavorite Buttons -->
+        <% if current_user.favorites.exists?(product: @product) %>
+          <%= button_to product_favorite_path(@product), method: :delete, class: 'favorite-button' do %>
+            <span class="heart-icon">&#10084;</span>
+          <% end %>
+        <% else %>
+          <%= button_to product_favorite_path(@product), class: 'favorite-button' do %>
+            <span class="heart-icon">&#9825;</span>
+          <% end %>
+        <% end %>
+      </div>
       <div class="product-buttons">
         <%= render partial: "cart_items/form", locals: {cart_item: @cart_item} %>
         <%= button_to 'Buy Now', '#', class: 'btn btn-primary' %>
 
-        <!-- Edit/ Delete Product Button -->
+        <!-- Delete Product Button -->
         <% if current_user && (current_user.id == @product.user_id || current_user.admin?) %>
-          <div><%#= link_to "Edit product", edit_product_path(@product) %></div>
-          <div><%= button_to "Delete product", @product, method: :delete, class: 'btn btn-primary', style:"background-color: #ff1919;" %><div>
+          <div><%= button_to "Delete product", @product, method: :delete, class: 'btn btn-primary', style:"background-color: #ff1919;" %></div>
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
