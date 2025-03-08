@@ -28,7 +28,7 @@
           <div class="product-item">
             <img src="<%= product.image.present? ? url_for(product.image) : asset_path('product-placeholder.png') %>" alt="<%= product.name %>" class="product-image">
             <h3><%= product.name %></h3>
-            <p>$<%= product.price %></p>
+            <p><%= number_to_currency(product.price, precision: 2, delimiter: ',', separator: '.', format: '%u%n') %></p>
           </div>
         <% end %>
       <% end %>

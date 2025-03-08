@@ -19,7 +19,7 @@ gem "jbuilder"
 
 # Tailwind CSS integration
 group :development do
-  gem "tailwindcss-rails", "~> 4.1"
+  gem "tailwindcss-rails", "~> 4.2"
 end
 
 # Asset pipeline support
@@ -55,4 +55,3 @@ end
 
 gem "aws-sdk-s3", "~> 1.182", require: false
 gem "google-cloud-storage"
-
