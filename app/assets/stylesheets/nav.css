@@ -46,6 +46,11 @@ body {
      background-color: #111;
  }
 
+ @font-face {
+    font-family: 'RocketRinder';
+    src: url('<%= asset_path "RocketRinder.otf" %>') format('opentype');
+  }  
+
 ul.navbar .brand {
     float: left;
     display: block;
