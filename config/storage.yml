@@ -36,7 +36,7 @@ amazon_public:
 google:
   service: GCS
   project: <%= ENV["GCS_PROJECT_ID"] %>
-  credentials: <%= Rails.root.join("config","vocal-etching-452700-q3-df039a91c07c.json") %>
+  credentials: /etc/secrets/vocal-etching-452700-q3-df039a91c07c.json
   bucket: <%= ENV["GCS_BUCKET"] %>
   public: true
 
