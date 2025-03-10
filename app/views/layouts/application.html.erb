@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>JD Tech</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  
-  <!-- Link to CSS -->
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
-  <!-- Link to JavaScript -->
-  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
-  <%= javascript_importmap_tags %>
-</head>
-
-<body>
-  <!-- Header with Navigation -->
-  <header>
-    <%= render 'layouts/nav' %>
-  </header>
-  
-  <!-- Main content -->
-  <main>
-    <%= yield %>
-  </main>
-  
-  <!-- Footer -->
-  <footer>
-    <p class="footer-title">©2024 JD Tech</p>
-  </footer>
-</body>
+  <head>
+    <title>JD Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Link to CSS -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <!-- Link to JavaScript -->
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+    <!-- Google Fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header with Navigation -->
+    <header>
+      <%= render 'layouts/nav' %>
+    </header>
+    <!-- Main content -->
+    <main>
+      <%= yield %>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p class="footer-title">©2024 JD Tech</p>
+    </footer>
+  </body>
 </html>

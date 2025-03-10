@@ -1,90 +1,72 @@
  @import 'nav';
- @import "tailwindcss/base";
- @import "tailwindcss/components";
- @import "tailwindcss/utilities";
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 body {
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
 }
-
 .navbar {
-     list-style-type: none;
-     margin: 0;
-     padding: 0;
-     overflow: hidden;
-     background-color: #333;
- }
-
- .navbar li {
-    float: left;
- }
- 
-  .navbar li.left_side {
-    float: left;
-    border-right: 1px solid #ccc;
-  }
-  
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+}
+.navbar li {
+float: left;
+}
+.navbar li.left_side {
+float: left;
+border-right: 1px solid #ccc;
+}
 .navbar li.first {
-    border-left: 1px solid #ccc;
+border-left: 1px solid #ccc;
 }
-
- .navbar li.right_side {
-     float: right;
-     border-left: 1px solid #ccc;
- }
-
- .navbar li a {
-     display: block;
-     color: white;
-     text-align: center;
-     padding: 14px 16px;
-     text-decoration: none;
- }
-
- .navbar li a:hover {
-     background-color: #111;
- }
-
- @font-face {
-    font-family: 'RocketRinder';
-    src: url('<%= asset_path "RocketRinder.otf" %>') format('opentype');
-  }  
-
+.navbar li.right_side {
+float: right;
+border-left: 1px solid #ccc;
+}
+.navbar li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+.navbar li a:hover {
+background-color: #111;
+}
 ul.navbar .brand {
-    float: left;
-    display: block;
-    color: rgb(171, 171, 171);
-    text-align: center;
-    padding: .15em;
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
-    border: 0;
-    font-family: 'Rocket Rinder', sans-serif;
-    font-size: 2em;
+float: left;
+display: block;
+color: rgb(171, 171, 171);
+text-align: center;
+padding: .15em;
+margin-left: 3.5rem;
+margin-right: 3.5rem;
+border: 0;
+font-family: 'Stalinist One', sans-serif;
+font-size: 2em;
 }
-
 .navbar-search-form {
-    display: inline-block;
-    margin-left: 15rem;
-    padding: .5rem;
+display: inline-block;
+margin-left: 15rem;
+padding: .5rem;
 }
-
 .navbar-search-field {
-    padding: .3rem;
-    font-size: 14px;
-    width: 30rem;
+padding: .3rem;
+font-size: 14px;
+width: 30rem;
 }
-
 .navbar-search-button {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #848484;
-    color: white;
-    border: none;
-    cursor: pointer;
+padding: 5px 10px;
+font-size: 14px;
+background-color: #848484;
+color: white;
+border: none;
+cursor: pointer;
 }
-
 .navbar-search-button:hover {
-    background-color: #6b6b6b;
+background-color: #6b6b6b;
 }
