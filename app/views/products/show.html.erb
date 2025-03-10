@@ -7,19 +7,29 @@
            alt="<%= @product.name %>">
     </div>
 
-    <!-- Product Features Section -->
-    <div class="product-features">
-      <h2>Key Features</h2>
-      <ul>
-        <% if @product.features.present? %>
-          <% @product.features.each do |feature| %>
-            <li><%= feature %></li>
+    <div style="display: flex; flex-direction: column;">
+      <!-- Display Product Category -->
+      <div class="product-category">
+        <h2>Category</h2>
+        <p><%= @product.category.present? ? @product.category : "Uncategorized" %></p>
+      </div>
+
+      <!-- Product Features Section -->
+      <div class="product-features">
+        <h2>Key Features</h2>
+        <ul>
+          <% if @product.features.present? %>
+            <% @product.features.each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
+          <% else %>
+            <li>No features available</li>
           <% end %>
-        <% else %>
-          <li>No features available</li>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
     </div>
+
+    
 
     <!-- Product Price and Buttons Section -->
     <div class="product-info">

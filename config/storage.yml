@@ -35,8 +35,8 @@ amazon_public:
 # Remember not to checkin your GCS keyfile to a repository
 google:
   service: GCS
-  project: <%= ENV["GCS_PROJECT_ID"] %>
-  credentials: <%= Rails.root.join("config","vocal-etching-452700-q3-df039a91c07c.json") %>
+  project: <%= ENV["GOOGLE_CLOUD_PROJECT"] %> #<%= ENV["GCS_PROJECT_ID"] %>
+  credentials: <%= ENV["GOOGLE_APPLICATION_CREDENTIALS"] %> #<%= Rails.root.join("config","vocal-etching-452700-q3-df039a91c07c.json") %>
   bucket: <%= ENV["GCS_BUCKET"] %>
   public: true
 

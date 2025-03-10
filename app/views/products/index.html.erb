@@ -1,28 +1,37 @@
-<div class="all-products-page">
-  <h1 class="product_title">Products</h1>
-  <div class="list-product-link">
-    <%= link_to 'List a Product', new_product_path, class: 'btn btn-success' %>
-  </div>
-  <div class="product-grid">
-    <% @products.each do |product| %>
-      <%= link_to product_path(product), class: 'product-link' do %>
-        <div class="product-item">
-          <img src="<%= product.image.present? ? url_for(product.image) : asset_path('product-placeholder.png') %>" alt="<%= product.name %>" class="product-image">
-          <h3><%= product.name %></h3>
-          <p><%= number_to_currency(product.price, precision: 2, delimiter: ',', separator: '.', format: '%u%n') %></p>
-        </div>
+<div style="display: flex; flex-direction: row;">
+  <aside class="aside-bar">
+    <h3 class="aside-title">Categories</h3>
+    <nav>
+      <ul class="aside-list">
+        <li class="aside-item processors">Processors</li>
+        <li class="aside-item motherboards">Motherboards</li>
+        <li class="aside-item graphics-cards">Graphics Cards</li>
+        <li class="aside-item computer-memory">Computer Memory / RAM</li>
+        <li class="aside-item hard-drives">Hard Drives & SSDs</li>
+        <li class="aside-item computer-cases">Computer Cases</li>
+        <li class="aside-item power-supplies">Power Supplies</li>
+        <li class="aside-item computer-fans">Computer Fans & Cooling</li>
+        <li class="aside-item other">Other</li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="all-products-page">
+    <div class="header-section">
+      <h1 class="product_title">Products</h1>
+      <div class="list-product-link">
+        <%= link_to 'List a Product', new_product_path, class: 'btn btn-success' %>
+      </div>
+    </div>
+    <div class="product-grid">
+      <% @products.each do |product| %>
+        <%= link_to product_path(product), class: 'product-link' do %>
+          <div class="product-item">
+            <img src="<%= product.image.present? ? url_for(product.image) : asset_path('product-placeholder.png') %>" alt="<%= product.name %>" class="product-image">
+            <h3><%= product.name %></h3>
+            <p><%= number_to_currency(product.price, precision: 2, delimiter: ',', separator: '.', format: '%u%n') %></p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
-<%# DISPLAYING THE SEARCH RESULTS, CODE NOT WORKING AS OF NOW %>
-<%# if @products.any? %>
-<%# @products.each do |product| %>
-  <div class="product-item">
-    <h2><%#= link_to product.name, product_path(product) %></h2>
-    <p><%#= truncate(product.description, length: 100) %></p>
-  </div>
-  <%# end %>
-  <%# else %>
-  <%# <p>No products found</p> %>
-  <%# end %>
