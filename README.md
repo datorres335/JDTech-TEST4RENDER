@@ -4,6 +4,9 @@ Welcome to JDTech!
 
 JDTech is a platform designed for users to buy and sell second-hand computer parts. Think of it as a specialized marketplace similar to eBay or Depop, but exclusively for computer hardware.
 
+## Live Demo
+You can view the live prototype at: [JDTech on Render](https://jdtech-u0ye.onrender.com/products)
+
 ## Current Status
 
 Please note that this website is currently a prototype and does not support actual e-commerce transactions. Our goal is to eventually enable full e-commerce functionality.

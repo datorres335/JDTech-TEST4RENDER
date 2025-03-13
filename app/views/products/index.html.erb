@@ -22,23 +22,37 @@
         <%= link_to 'List a Product', new_product_path, class: 'btn btn-success' %>
       </div>
     </div>
+    <%# Define the desired order of categories %>
+    <% categories = [
+  "Processors",
+  "Motherboards",
+  "Graphics Cards",
+  "Computer Memory/ RAM",
+  "Hard Drives & SSDs",
+  "Computer Cases",
+  "Power Supplies",
+  "Computer Fans & Cooling",
+  "Other"
+] %>
     <% grouped_products = @products.group_by(&:category) %>
-    <% grouped_products.each do |category, products| %>
-      <hr class="category-divider">
-      <h2 class="product-header-section" id="<%= category.parameterize %>">
-        <%= category %>
-      </h2>
-      <div class="product-grid">
-        <% products.each do |product| %>
-          <%= link_to product_path(product), class: 'product-link' do %>
-            <div class="product-item">
-              <img src="<%= product.image.present? ? url_for(product.image) : asset_path('product-placeholder.png') %>" alt="<%= product.name %>" class="product-image">
-              <h3><%= product.name %></h3>
-              <p><%= number_to_currency(product.price, precision: 2, delimiter: ',', separator: '.', format: '%u%n') %></p>
-            </div>
+    <% categories.each do |cat| %>
+      <% if grouped_products[cat].present? %>
+        <hr class="category-divider">
+        <h2 class="product-header-section" id="<%= cat.parameterize %>">
+          <%= cat %>
+        </h2>
+        <div class="product-grid">
+          <% grouped_products[cat].each do |product| %>
+            <%= link_to product_path(product), class: 'product-link' do %>
+              <div class="product-item">
+                <img src="<%= product.image.present? ? url_for(product.image) : asset_path('product-placeholder.png') %>" alt="<%= product.name %>" class="product-image">
+                <h3><%= product.name %></h3>
+                <p><%= number_to_currency(product.price, precision: 2, delimiter: ',', separator: '.', format: '%u%n') %></p>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
