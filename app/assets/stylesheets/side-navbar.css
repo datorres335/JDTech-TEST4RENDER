@@ -1,11 +1,14 @@
 .aside-bar {
-    width: 14rem;
-    /* margin-right: 1rem; */
+    position: fixed;      /* Fixes the element in the viewport */
+    top: 3em;            /*   Aligns it with the top of the viewport */
+    left: 0;              /* Aligns it with the left side */
+    width: 14rem;         /* Set a fixed width, as before */
+    height: calc(100vh - 3em);       /* Make it span the full viewport height */
+    overflow-y: auto;     /* Allow vertical scrolling inside the aside if content is tall */
     background-color: #f4f4f4;
     border: 1px solid #ccc;
     padding: 1rem;
     font-family: 'Poppins', sans-serif;
-    flex-shrink: 0;
 }
 
 .aside-title {
