@@ -23,6 +23,9 @@
  
  @import 'nav';
 
+ html {
+  scroll-behavior: smooth;
+}
  
  .site-title, .footer-title {
    padding-left: 1rem;

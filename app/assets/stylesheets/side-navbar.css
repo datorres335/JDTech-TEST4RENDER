@@ -37,6 +37,11 @@
     cursor: pointer;
 }
 
+.aside-item a {
+    color: inherit;         /* Match the parent element's color, or choose your own */
+    text-decoration: none;  /* Remove underline */
+}
+
 
 .aside-item:last-child {
     border-bottom: none;

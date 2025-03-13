@@ -3,15 +3,15 @@
     <h3 class="aside-title">Categories</h3>
     <nav>
       <ul class="aside-list">
-        <li class="aside-item processors">Processors</li>
-        <li class="aside-item motherboards">Motherboards</li>
-        <li class="aside-item graphics-cards">Graphics Cards</li>
-        <li class="aside-item computer-memory">Computer Memory / RAM</li>
-        <li class="aside-item hard-drives">Hard Drives & SSDs</li>
-        <li class="aside-item computer-cases">Computer Cases</li>
-        <li class="aside-item power-supplies">Power Supplies</li>
-        <li class="aside-item computer-fans">Computer Fans & Cooling</li>
-        <li class="aside-item other">Other</li>
+        <li class="aside-item processors"><a href="#processors">Processors</a></li>
+        <li class="aside-item motherboards"><a href="#motherboards">Motherboards</a></li>
+        <li class="aside-item graphics-cards"><a href="#graphics-cards">Graphics Cards</a></li>
+        <li class="aside-item computer-memory"><a href="#computer-memory-ram">Computer Memory / RAM</a></li>
+        <li class="aside-item hard-drives"><a href="#hard-drives-ssds">Hard Drives & SSDs</a></li>
+        <li class="aside-item computer-cases"><a href="#computer-cases">Computer Cases</a></li>
+        <li class="aside-item power-supplies"><a href="#power-supplies">Power Supplies</a></li>
+        <li class="aside-item computer-fans"><a href="#computer-fans-cooling">Computer Fans & Cooling</a></li>
+        <li class="aside-item other"><a href="#other">Other</a></li>
       </ul>
     </nav>
   </aside>
@@ -25,7 +25,9 @@
     <% grouped_products = @products.group_by(&:category) %>
     <% grouped_products.each do |category, products| %>
       <hr class="category-divider">
-      <h2 class="product-header-section"><%= category %></h2>
+      <h2 class="product-header-section" id="<%= category.parameterize %>">
+        <%= category %>
+      </h2>
       <div class="product-grid">
         <% products.each do |product| %>
           <%= link_to product_path(product), class: 'product-link' do %>
