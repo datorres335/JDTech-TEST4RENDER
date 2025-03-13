@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "profiles/show"
 
   devise_for :users
-  get "products/index"
+  #get "products/index" #THIS LINE OF CODE IS CAUSING ISSUE, "resouces :products" is handling all actions
   root "home#home" # The home controller and home action for the root URL
 
   # Favorite Items
