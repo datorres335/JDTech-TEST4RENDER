@@ -53,5 +53,5 @@ group :test do
   gem "selenium-webdriver" # Browser automation
 end
 
-gem "aws-sdk-s3", "~> 1.182", require: false
+gem "aws-sdk-s3", "~> 1.183", require: false
 gem "google-cloud-storage"
